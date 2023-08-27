@@ -1,0 +1,43 @@
+<mat-card class="mb-4">
+    <div class="flex justify-between">
+        <div class="p-3">
+            <button mat-button [matMenuTriggerFor]="soryByMenu">
+                sort by {{sort}} <span style="vertical-align: middle;"><mat-icon>expand_more</mat-icon></span>
+            </button>
+            <mat-menu #soryByMenu="matMenu">
+                <button (click)="onSortUpdated('desc')" mat-menu-item>desc</button>
+                <button (click)="onSortUpdated('asc')" mat-menu-item>asc</button>
+            </mat-menu>
+        </div>
+
+        <div class="flex Items-center p-3">
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    show {{ ItemShowsCount }}
+                    <span style="vertical-align: middle;"><mat-icon>expand_more</mat-icon></span>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                    <button (click)="onItemsUpdated(12)" mat-menu-item>12</button>
+                    <button (click)="onItemsUpdated(24)" mat-menu-item>24</button>
+                    <button (click)="onItemsUpdated(36)" mat-menu-item>36</button>
+                </mat-menu>
+
+
+
+                <button (click)="onColumsUpdated(1)">
+                    <mat-icon style="vertical-align: middle;">view_list</mat-icon>
+                </button>
+
+                <button (click)="onColumsUpdated(3)">
+                    <mat-icon style="vertical-align: middle;">view_module</mat-icon>
+                </button>
+
+                <button (click)="onColumsUpdated(4)">
+                    <mat-icon style="vertical-align: middle;">view_comfy</mat-icon>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</mat-card>
